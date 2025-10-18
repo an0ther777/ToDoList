@@ -18,7 +18,7 @@
 
 <style scoped>
 .wrapper{
-    background-color: rgb(218, 218, 218);
+    background: (rgba(38, 38, 38, 1) 55%, rgba(61, 61, 61, 1) 100%);
     border: 3px solid black;
     border-radius: 5px;  
     margin-bottom: 15px;

@@ -1,70 +1,87 @@
 <template>
-<h2>To-Do-List</h2>
+  <div class="container">
+    <h2>To-Do-List</h2>
     <div class="main">
-        <div class="text_in_modal_window">
-            <AddInLIst style="margin-left: 20px;" @task-added="addTask"></AddInLIst>
-                <h1>Задачи:</h1>
-                <div>
-                    <ul>
-                        <li v-for="item in list" :key="item.id">
-                            <List :task="item" style="margin-left: 30px;"></List>
-                        </li>
-                    </ul>
-            </div>
-        </div>
+      <div class="content">
+        <AddInList @task-added="addTask"></AddInList>
+        <h1>Задачи:</h1>
+        <ul>
+          <li v-for="item in list" :key="item.id">
+            <List :task="item"></List>
+          </li>
+        </ul>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
-import AddInLIst from './AddInLIst.vue';
+import AddInList from './AddInList.vue';
 import List from './List.vue';
 
-    export default {
-        components: {
-            AddInLIst, List
-        },
-        data(){
-            return{
-                list: [{id:1, body:'Ноdsaaaaaadasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasdsdsdsdsdsdsdмер 1', priority:'max'},
-                    {id:2, body:'Номер 2', priority:'avg'},
-                    {id:3, body:'Номер 3', priority:'min'},
-                    {id:4, body:'Номер 4', priority:'max'},
-                    {id:5, body:'Номер 5', priority:'avg'},
-                ]
-            }
-        },
-        methods: {
-            addTask(newTask) {
-                this.list.push(newTask); 
-            }
+export default {
+  components: {
+    AddInList, 
+    List
+  },
+  data() {
+    return {
+      list: [
+        {id:1, body:'Задача 1', priority:'max'},
+        {id:2, body:'Задача 2', priority:'avg'},
+        {id:3, body:'Задача 3', priority:'min'},
+        {id:4, body:'Задача 4', priority:'max'},
+        {id:5, body:'Задача 5', priority:'avg'},
+      ]
     }
-
+  },
+  methods: {
+    addTask(newTask) {
+      this.list.push(newTask); 
     }
+  }
+}
 </script>
 
 <style scoped>
-.main{
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    position: fixed;
-    margin: -10px 0 0 20px;
-    position: absolute;
-    flex-direction: column;
-    min-width: 60%;
-    min-height: 80vh;
-    max-width: 60%;
-    border: 2px solid black;
-    border-radius: 15px;
-    box-shadow: 10px 5px 5px rgb(71, 71, 71);
-    overflow-y: auto;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
 }
-.text_in_modal_window{
-    justify-content: flex-start; 
-    align-items: flex-start;
-    position: absolute;
-    top: 0;
-    left: 25px;
-    
+
+.main {
+  width: 60%;
+  min-height: 80vh;
+  border: 2px solid black;
+  border-radius: 15px;
+  box-shadow: 4px 3px 5px rgb(71, 71, 71);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.content {
+  width: 100%;
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 20px 0 10px 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
 }
 </style>

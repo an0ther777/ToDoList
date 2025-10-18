@@ -56,7 +56,7 @@ import { v4 as uuidv4 } from 'uuid';
     padding: 10px;
     border: 2px solid black;
     border-radius: 5px;
-    box-shadow: 10px 5px 5px rgb(71, 71, 71);
+    box-shadow: 2px 2px 5px rgb(71, 71, 71);
     cursor: pointer;
     transition: all 0.3s;
 }
@@ -64,7 +64,7 @@ import { v4 as uuidv4 } from 'uuid';
     padding: 10px;
     border: 2px solid black;
     border-radius: 5px;
-    box-shadow: 5px 5px 5px rgb(71, 71, 71);
+    box-shadow: 2px 2px 5px rgb(71, 71, 71);
     cursor: pointer;
     transition: all 0.3s;
 }
@@ -72,7 +72,7 @@ import { v4 as uuidv4 } from 'uuid';
     padding: 10px;
     border: 2px solid black;
     border-radius: 5px;
-    box-shadow: 5px 5px 5px rgb(71, 71, 71);
+    box-shadow: 2px 2px 5px rgb(71, 71, 71);
     margin: auto;
     cursor: pointer;
     transition: all 0.3s;
